@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="text-center mb-4">Task List</h1>
+
+<div class="row">
+    {% for task in tasks %}
+    <div class="col-md-4 mb-3">
+        <div class="card {{ 'border-success' if task.complete else 'border-secondary' }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+                <p class="card-text">{{ task.description }}</p>
+                <p class="text-muted">Status: 
+                    <span class="{{ 'text-success' if task.complete else 'text-warning' }}">
+                        {{ "Complete" if task.complete else "Incomplete" }}
+                    </span>
+                </p>
+                <a href="{{ url_for('main.complete_task', task_id=task.id) }}" class="btn btn-sm btn-outline-primary">
+                    Toggle Status
+                </a>
+                <a href="{{ url_for('main.edit_task', task_id=task.id) }}" class="btn btn-sm btn-outline-secondary">
+                    Edit
+                </a>
+                <a href="{{ url_for('main.delete_task', task_id=task.id) }}" class="btn btn-sm btn-outline-danger">
+                    Delete
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
