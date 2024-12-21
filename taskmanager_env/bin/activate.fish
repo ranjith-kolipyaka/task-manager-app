@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/ranjith/Desktop/python_projects_2024/task-manager-app-1/taskmanager_env"
+set -gx VIRTUAL_ENV "/Users/ranjith/Desktop/python_projects_2024/task-manager-app/taskmanager_env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

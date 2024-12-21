@@ -49,5 +49,7 @@ python3 run.py
 
 5. Run the Application
 
+http://127.0.0.1:5000/
+
 python3 run.py
 
